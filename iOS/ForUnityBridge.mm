@@ -118,11 +118,11 @@ extern "C"
             NSLog(@"reslut = %@",resultDic);
             if([resultDic[@"resultStatus"]  isEqual: @"9000"])
             {
-                UnitySendMessage("ThirdPartySdkManager", "AliPayCallback", "true");
+                UnitySendMessage("ThirdPartySDK", "AliPayCallback", "true");
             }
             else
             {
-                UnitySendMessage("ThirdPartySdkManager", "AliPayCallback", "false");
+                UnitySendMessage("ThirdPartySDK", "AliPayCallback", "false");
             }
         }];
     }
@@ -175,13 +175,13 @@ extern "C"
      */
     if ([resp isKindOfClass:[SendAuthResp class]]) {   //授权登录的类。
         if (resp.errCode == 0) {
-            UnitySendMessage("ThirdPartySdkManager", "LoginCallBack",[((SendAuthResp *)resp).code UTF8String]);
+            UnitySendMessage("ThirdPartySDK", "LoginCallBack",[((SendAuthResp *)resp).code UTF8String]);
         }
         
     }else if ([resp isKindOfClass:[SendMessageToWXResp class]]) {
-        UnitySendMessage("ShareManager", "WechatCallBack",[[NSString stringWithFormat:@"%d",((SendMessageToWXResp*)resp).errCode] UTF8String]);
+        UnitySendMessage("SDKShare", "WechatCallBack",[[NSString stringWithFormat:@"%d",((SendMessageToWXResp*)resp).errCode] UTF8String]);
     }else if ([resp isKindOfClass:[PayResp class]]){ 
-		UnitySendMessage("ThirdPartySdkManager", "WechatPayCallback",[[NSString stringWithFormat:@"%d",((PayResp*)resp).errCode] UTF8String]);
+		UnitySendMessage("ThirdPartySDK", "WechatPayCallback",[[NSString stringWithFormat:@"%d",((PayResp*)resp).errCode] UTF8String]);
     }
 }
 @end
