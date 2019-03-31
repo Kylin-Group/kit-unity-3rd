@@ -40,7 +40,7 @@ public class WXPayEntryActivity extends Activity implements IWXAPIEventHandler  
     @Override
     public void onResp(BaseResp resp) {
         if (resp.getType() == ConstantsAPI.COMMAND_PAY_BY_WX) {
-            UnityPlayer.UnitySendMessage("ThirdPartySdkManager","WechatPayCallback", String.valueOf(resp.errCode));
+            UnityPlayer.UnitySendMessage("ThirdPartySDK","WechatPayCallback", String.valueOf(resp.errCode));
             finish();
         }
     }

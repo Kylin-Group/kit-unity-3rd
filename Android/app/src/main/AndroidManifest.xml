@@ -21,7 +21,7 @@
 
     <application
         android:allowBackup="true">
-        <activity android:name="com.my.ugcf.Tool">
+        <activity android:name="com.my.kit.Tool">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -30,12 +30,12 @@
         </activity>
 
         <activity
-            android:name="com.my.ugcf.wxapi.WXEntryActivity"
+            android:name="com.my.ugcf.kit.WXEntryActivity"
             android:exported="true"
             android:launchMode="singleTop"/>
 
         <activity
-            android:name="com.my.ugcf.wxapi.WXPayEntryActivity"
+            android:name="com.my.ugcf.kit.WXPayEntryActivity"
             android:exported="true"
             android:launchMode="singleTop"/>
 

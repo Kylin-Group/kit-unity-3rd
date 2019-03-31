@@ -43,13 +43,13 @@ public class WXEntryActivity extends Activity implements IWXAPIEventHandler {
 		switch (resp.getType()){
 			case 1://授权
 				if(resp.errCode == BaseResp.ErrCode.ERR_OK){
-					UnityPlayer.UnitySendMessage("ThirdPartySdkManager", "LoginCallBack", ((SendAuth.Resp) resp).code);
+					UnityPlayer.UnitySendMessage("ThirdPartySDK", "LoginCallBack", ((SendAuth.Resp) resp).code);
 				}else{
-					UnityPlayer.UnitySendMessage("ThirdPartySdkManager", "LoginCallBack", "");
+					UnityPlayer.UnitySendMessage("ThirdPartySDK", "LoginCallBack", "");
 				}
 				break;
 			case 2://分享
-				UnityPlayer.UnitySendMessage("ShareManager", "WechatCallBack", "" + resp.errCode);
+				UnityPlayer.UnitySendMessage("SDKShare", "WechatCallBack", "" + resp.errCode);
 				break;
 		}
 		finish();

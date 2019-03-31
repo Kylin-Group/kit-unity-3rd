@@ -28,11 +28,11 @@ public class AliPay {
                     String resultStatus = payResult.getResultStatus();
                     // 判断resultStatus 为9000则代表支付成功
                     if (TextUtils.equals(resultStatus, "9000")) {
-                        UnityPlayer.UnitySendMessage("ThirdPartySdkManager", "AliPayCallback", "true");
+                        UnityPlayer.UnitySendMessage("ThirdPartySDK", "AliPayCallback", "true");
                         //Toast.makeText(PayDemoActivity.this, "支付成功", Toast.LENGTH_SHORT).show();
                     } else {
                         //Toast.makeText(PayDemoActivity.this, "支付失败", Toast.LENGTH_SHORT).show();
-                        UnityPlayer.UnitySendMessage("ThirdPartySdkManager", "AliPayCallback", "false");
+                        UnityPlayer.UnitySendMessage("ThirdPartySDK", "AliPayCallback", "false");
                     }
                     break;
                 }
